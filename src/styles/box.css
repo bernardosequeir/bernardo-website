@@ -1,0 +1,22 @@
+#quote-box{
+  width: 50%;
+  min-height: 70%;
+  margin: auto;
+  background-color: #4A4E69;
+  color: #F2E9E4;
+  border-radius: 5px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.75);
+}
+
+#author{
+  border-bottom: solid #282c34 5px;
+  width: 80%; 
+  text-transform: uppercase;
+  margin-bottom: 2%;
+}
+
+a {
+  color: inherit;
+}
