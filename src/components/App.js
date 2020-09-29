@@ -1,12 +1,12 @@
 import React from 'react';
 import '../styles/App.css';
-import Box from './Box';
+import Quote from './Quote';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Box />
+        <Quote />
       </header>
     </div>
   );

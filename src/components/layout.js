@@ -2,7 +2,7 @@
 import React from 'react';
 import { css } from '@emotion/core';
 import { useStaticQuery, Link, graphql } from 'gatsby';
-import '../styles/global.scss';
+import '../styles/layout.scss';
 
 export default ({ children }) => {
   const data = useStaticQuery(

@@ -43,7 +43,10 @@ class Quote extends React.Component {
 
   render() {
     return (
-      <>
+      <div id="quote-box">
+        <header id="author">
+          <h1>Audre Lorde Quotes</h1>
+        </header>
         <p id="text">{quotes[this.state.quoteIndex]}</p>
         <div id="buttons">
           <div>
@@ -62,7 +65,7 @@ class Quote extends React.Component {
             New Quote
           </button>
         </div>
-      </>
+      </div>
     );
   }
 }
