@@ -54,9 +54,8 @@ class Quote extends React.Component {
               id="tweet-quote"
               rel="noopener noreferrer"
               target="_blank"
-              href={`http://twitter.com/intent/tweet?text=${
-                quotes[this.state.quoteIndex]
-              }`}
+              href={`http://twitter.com/intent/tweet?text=${quotes[this.state.quoteIndex]
+                }`}
             >
               Tweet This
             </a>
