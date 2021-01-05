@@ -6,6 +6,7 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-emotion`,
     `gatsby-transformer-remark`,
+    // `gatsby-plugin-material-ui`
 
     {
       resolve: `gatsby-source-filesystem`,

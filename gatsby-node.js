@@ -29,6 +29,20 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
+  const portfolio = await graphql(`
+    query {
+      allFile {
+      edges {
+        node {
+          name
+
+          relativeDirectory
+        }
+      }
+    }
+  }
+  `)
+
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
       path: node.fields.slug,
@@ -37,7 +51,19 @@ exports.createPages = async ({ graphql, actions }) => {
         // Data passed to context is available
         // in page queries as GraphQL variables.
         slug: node.fields.slug,
-      },
-    });
-  });
-};
+      }
+    })
+  })
+  portfolio.data.allFile.edges.filter(({ node }) => node.relativeDirectory === "portfolio").forEach(({ node }) => {
+    console.log(node);
+    createPage({
+      path: node.name,
+      component: path.resolve(`./src/pages/portfolio/${node.name}.js`),
+      context: {
+        // Data passed to context is available
+        // in page queries as GraphQL variables.
+        slug: node.name,
+      }
+    })
+  })
+}
