@@ -25,13 +25,18 @@
           "options": {
             "sourceMap": true,
             "autoLabel": true,
-            "plugins": []
+            "plugins": [],
+            "labelFormat": "[local]",
+            "cssPropOptimization": true
           }
         },
         {
           "name": "/home/bernardosequeir/bernardo-website/node_modules/@babel/preset-typescript/lib/index.js",
           "options": {
-            "plugins": []
+            "plugins": [],
+            "allExtensions": false,
+            "isTSX": false,
+            "jsxPragma": "React"
           }
         }
       ],
@@ -65,13 +70,18 @@
           "options": {
             "sourceMap": true,
             "autoLabel": true,
-            "plugins": []
+            "plugins": [],
+            "labelFormat": "[local]",
+            "cssPropOptimization": true
           }
         },
         {
           "name": "/home/bernardosequeir/bernardo-website/node_modules/@babel/preset-typescript/lib/index.js",
           "options": {
-            "plugins": []
+            "plugins": [],
+            "allExtensions": false,
+            "isTSX": false,
+            "jsxPragma": "React"
           }
         }
       ],
@@ -105,13 +115,18 @@
           "options": {
             "sourceMap": true,
             "autoLabel": true,
-            "plugins": []
+            "plugins": [],
+            "labelFormat": "[local]",
+            "cssPropOptimization": true
           }
         },
         {
           "name": "/home/bernardosequeir/bernardo-website/node_modules/@babel/preset-typescript/lib/index.js",
           "options": {
-            "plugins": []
+            "plugins": [],
+            "allExtensions": false,
+            "isTSX": false,
+            "jsxPragma": "React"
           }
         }
       ],
@@ -145,13 +160,18 @@
           "options": {
             "sourceMap": true,
             "autoLabel": true,
-            "plugins": []
+            "plugins": [],
+            "labelFormat": "[local]",
+            "cssPropOptimization": true
           }
         },
         {
           "name": "/home/bernardosequeir/bernardo-website/node_modules/@babel/preset-typescript/lib/index.js",
           "options": {
-            "plugins": []
+            "plugins": [],
+            "allExtensions": false,
+            "isTSX": false,
+            "jsxPragma": "React"
           }
         }
       ],

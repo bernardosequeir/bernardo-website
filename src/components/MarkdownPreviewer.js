@@ -1,7 +1,7 @@
 import React from "react";
 import "./MarkdownPreviewer.css";
 import marked from "marked";
-import DOMPurify from "dompurify";
+
 import ResizablePanels from "resizable-panels-react";
 import Markdown from "./Markdown";
 const defaultMarkdown = `
@@ -21,7 +21,8 @@ const defaultMarkdown = `
   
   __bold text__
 `;
-let markdown = marked(DOMPurify.sanitize(defaultMarkdown));
+
+let markdown = marked(defaultMarkdown);
 class MarkdownPreviewer extends React.Component {
   constructor(props) {
     super(props);
@@ -34,7 +35,7 @@ class MarkdownPreviewer extends React.Component {
 
   handleChange(event) {
     console.log(event.target.value);
-    let md = marked(DOMPurify.sanitize(event.target.value));
+    let md = marked(event.target.value);
     this.setState({
       markdown: md,
     });
