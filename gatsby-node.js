@@ -54,7 +54,7 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     })
   })
-  portfolio.data.allFile.edges.filter(({ node }) => node.relativeDirectory === "portfolio").forEach(({ node }) => {
+  /*portfolio.data.allFile.edges.filter(({ node }) => node.relativeDirectory === "portfolio").forEach(({ node }) => {
     console.log(node);
     createPage({
       path: node.name,
@@ -65,5 +65,5 @@ exports.createPages = async ({ graphql, actions }) => {
         slug: node.name,
       }
     })
-  })
+  })*/
 }

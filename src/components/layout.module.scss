@@ -5,16 +5,44 @@
 html {
   font-size: 80%;
   width: 100%;
+  height: 100%;
 }
-html.text-large {
+body {
+  height: 100%;
+}
+html.textLarge {
   font-size: 75%;
 }
 
-html.text-small {
+html.textSmall {
   font-size: 50%;
 }
-/*establishing the size for each text element*/
-$font-size-display-4: 112;
+
+#___gatsby {
+  height: 100%;
+}
+
+.main {
+  padding-top: 5%;
+  display: flex;
+  flex-flow: column;
+  margin-top: 5%;
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14),
+    0 3px 3px -2px rgba(0, 0, 0, 0.12), 0 1px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 25px;
+  margin: 0 auto;
+  min-height: 90%;
+
+
+}
+
+.wrapper {
+  padding: 2%;  
+  background-color: #121212;
+  min-height: 100vh;
+  $font-size-display-4: 112;
 $font-size-display-3: 56;
 $font-size-display-2: 45;
 $font-size-display-1: 34;
@@ -99,7 +127,7 @@ $letter-spacing-button: 0.1;
   letter-spacing: ($kerningSize / 10)+0rem;
 }
 
-.display-4 {
+.display4 {
   @include font(
     $font-size-display-4,
     $line-height-display-4,
@@ -108,7 +136,7 @@ $letter-spacing-button: 0.1;
   font-weight: $font-weight-display-4;
   text-transform: inherit;
 }
-.display-3 {
+.display3 {
   @include font(
     $font-size-display-3,
     $line-height-display-3,
@@ -117,7 +145,7 @@ $letter-spacing-button: 0.1;
   font-weight: $font-weight-display-3;
   text-transform: inherit;
 }
-.display-2 {
+.display2 {
   @include font(
     $font-size-display-2,
     $line-height-display-2,
@@ -126,7 +154,7 @@ $letter-spacing-button: 0.1;
   font-weight: $font-weight-display-2;
   text-transform: inherit;
 }
-.display-1 {
+.display1 {
   @include font(
     $font-size-display-1,
     $line-height-display-1,
@@ -149,7 +177,7 @@ $letter-spacing-button: 0.1;
   font-weight: $font-weight-title;
   text-transform: inherit;
 }
-.subhead-2 {
+.subhead2 {
   @include font(
     $font-size-subhead-2,
     $line-height-subhead-2,
@@ -158,7 +186,7 @@ $letter-spacing-button: 0.1;
   font-weight: $font-weight-subhead-2;
   text-transform: inherit;
 }
-.subhead-1 {
+.subhead1 {
   @include font(
     $font-size-subhead-1,
     $line-height-subhead-1,
@@ -167,12 +195,12 @@ $letter-spacing-button: 0.1;
   font-weight: $font-weight-subhead-1;
   text-transform: inherit;
 }
-.body-2 {
+.body2 {
   @include font($font-size-body-2, $line-height-body-2, $letter-spacing-body-2);
   font-weight: $font-weight-body-2;
   text-transform: inherit;
 }
-.body-1 {
+.body1 {
   @include font($font-size-body-1, $line-height-body-1, $letter-spacing-body-1);
   font-weight: $font-weight-body-1;
   text-transform: inherit;
@@ -212,16 +240,16 @@ $letter-spacing-button: 0.1;
   .main {
     width: 100%;
   }
-  .subhead-2 {
+  .subhead2 {
     @include font-size($font-size-dv-subhead);
   }
-  .subhead-1 {
+  .subhead1 {
     @include font-size($font-size-dv-subhead);
   }
-  .body-2 {
+  .body2 {
     @include font-size($font-size-dv-body);
   }
-  .body-1 {
+  .body1 {
     @include font-size($font-size-dv-body);
   }
   .menu {
@@ -229,20 +257,20 @@ $letter-spacing-button: 0.1;
   }
 }
 
-.display-4,
-.display-3,
-.display-2,
-.display-1 {
+.display4,
+.display3,
+.display2,
+.display1 {
   margin: 0 0 $line-height-title/2 + 0px 0;
   margin-bottom: $line-height-title/20 + 0rem;
 }
 
 .headline,
 .title,
-.subhead-2,
-.subhead-1,
-.body-2,
-.body-1,
+.subhead2,
+.subhead1,
+.body2,
+.body1,
 .caption,
 .label,
 .menu,
@@ -255,56 +283,39 @@ a:visited {
   color: #ee4540;
 }
 
-body {
-  background-color: #121212;
-  margin-top: 2%;
-}
-
-.main {
-  display: flex;
-  flex-flow: column;
-  margin-top: 5%;
-  background-color: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14),
-    0 3px 3px -2px rgba(0, 0, 0, 0.12), 0 1px 8px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  padding: 25px;
-  margin: 0 auto;
-  min-height: 90%;
-}
-
-pre,
-.posts {
-  background-color: rgba(255, 255, 255, 0.12);
-  margin: 3%;
-  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
-    0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
-  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-pre:hover,
-.posts:hover {
-  background-color: rgba(255, 255, 255, 0.16);
-  box-shadow: 0 12px 17px 2px rgba(0, 0, 0, 0.14),
-    0 5px 22px 4px rgba(0, 0, 0, 0.12), 0 7px 8px -4px rgba(0, 0, 0, 0.2);
-}
-.posts {
-  padding: 1rem;
-  border-radius: 0.7em;
-}
-h1,
-h2,
-h3,
-h4,
-p,
-a {
-  font-family: "Roboto", sans-serif;
-  color: #ffffff;
-}
-
-code{
-  white-space: pre-wrap !important;
-  word-wrap: break-word !important;
-  word-break: normal !important;
-  overflow-wrap: break-word !important;
-  overflow: hidden !important;
+  pre,
+  .posts {
+    background-color: rgba(255, 255, 255, 0.12);
+    margin: 3%;
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+      0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  pre:hover,
+  .posts:hover {
+    background-color: rgba(255, 255, 255, 0.16);
+    box-shadow: 0 12px 17px 2px rgba(0, 0, 0, 0.14),
+      0 5px 22px 4px rgba(0, 0, 0, 0.12), 0 7px 8px -4px rgba(0, 0, 0, 0.2);
+  }
+  .posts {
+    padding: 1rem;
+    border-radius: 0.7em;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  a {
+    font-family: "Roboto", sans-serif;
+    color: #ffffff;
+  }
+  
+  code{
+    white-space: pre-wrap !important;
+    word-wrap: break-word !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    overflow: hidden !important;
+  }
 }

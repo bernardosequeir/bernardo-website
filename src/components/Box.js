@@ -1,6 +1,6 @@
 import React from 'react';
 import Quote from './Quote';
-import '../styles/box.css';
+import './box.module.scss';
 
 function Box(props) {
   return (

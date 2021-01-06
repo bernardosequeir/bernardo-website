@@ -1,6 +1,6 @@
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
-import '../styles/quote.css';
+import './quote.module.scss';
 
 const quotes = [
   'Your silence will not protect you.',

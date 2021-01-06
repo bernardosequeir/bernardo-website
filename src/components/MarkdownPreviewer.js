@@ -1,5 +1,5 @@
 import React from "react";
-import "./MarkdownPreviewer.css";
+import styles from "../styles/MarkdownPreviewer.module.scss";
 import marked from "marked";
 
 import ResizablePanels from "resizable-panels-react";
@@ -42,29 +42,31 @@ class MarkdownPreviewer extends React.Component {
   }
   render() {
     return (
-      <div id="display-box">
-        <div id="top-bar">
-          <h1>Markdown Previewer</h1>
-        </div>
-        <ResizablePanels
-          displayDirection="row"
-          width="auto"
-          height="100%"
-          panelsSize={[50, 50]}
-          sizeUnitMeasure="%"
-          resizerColor="#000"
-          resizerSize="3px"
-        >
-          <div id="markdown">
-            <textarea
-              defaultValue={this.state.input}
-              onChange={this.handleChange}
-            ></textarea>
+      <div id={styles.container}>
+        <div id={styles.displayBox}>
+          <div id={styles.topBar}>
+            <h1>Markdown Previewer</h1>
           </div>
-          <Markdown markdown={this.state.markdown} />
-        </ResizablePanels>
-        <div className="gutter">
-          <p>coded by bernardo sequeira</p>
+          <ResizablePanels
+            displayDirection="row"
+            width="auto"
+            height="100%"
+            panelsSize={[50, 50]}
+            sizeUnitMeasure="%"
+            resizerColor="#000"
+            resizerSize="3px"
+          >
+            <div id={styles.markdown}>
+              <textarea
+                defaultValue={this.state.input}
+                onChange={this.handleChange}
+              ></textarea>
+            </div>
+            <Markdown markdown={this.state.markdown} />
+          </ResizablePanels>
+          <div className="gutter">
+            <p>coded by bernardo sequeira</p>
+          </div>
         </div>
       </div>
     );
