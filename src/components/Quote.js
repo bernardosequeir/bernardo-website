@@ -1,6 +1,6 @@
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
-import './quote.module.scss';
+import styles from './quote.module.scss';
 
 const quotes = [
   'Your silence will not protect you.',
@@ -43,15 +43,15 @@ class Quote extends React.Component {
 
   render() {
     return (
-      <div id="quote-box">
-        <header id="author">
+      <div id={styles.quoteBox}>
+        <header id={styles.author}>
           <h1>Audre Lorde Quotes</h1>
         </header>
-        <p id="text">{quotes[this.state.quoteIndex]}</p>
-        <div id="buttons">
+        <p id={styles.text}>{quotes[this.state.quoteIndex]}</p>
+        <div id={styles.buttons}>
           <div>
             <a
-              id="tweet-quote"
+              id={styles.tweetQuote}
               rel="noopener noreferrer"
               target="_blank"
               href={`http://twitter.com/intent/tweet?text=${quotes[this.state.quoteIndex]
@@ -60,7 +60,7 @@ class Quote extends React.Component {
               Tweet This
             </a>
           </div>
-          <button type="button" id="new-quote" onClick={this.newQuote}>
+          <button type="button" id={styles.newQuote} onClick={this.newQuote}>
             New Quote
           </button>
         </div>
