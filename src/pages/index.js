@@ -37,7 +37,7 @@ export default ({ data }) => (
               >
                 {node.frontmatter.title} <span>— {node.frontmatter.date}</span>
               </h3>
-              <p className={styles.label}>{node.excerpt}</p>
+              <p className={styles.label}>{node.frontmatter.pullQuote}</p>
             </Link>
           </div>
         ))}
@@ -54,7 +54,8 @@ export const query = graphql`
           id
           frontmatter {
             title
-            date(formatString: "DD MMMM, YYYY")
+            date(formatString: "YYYY-MM-DD")
+            pullQuote
           }
           fields {
             slug
