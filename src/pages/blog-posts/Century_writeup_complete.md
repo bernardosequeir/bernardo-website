@@ -6,7 +6,7 @@ title: "Under The Wire Century Wargame Write-Up"
 
 So, I hope you you enjoy the Write-Up and if you have any doubts don't be afraid to shoot me an e-mail.
 
-### Century 1 -> 2
+### Century 1 ➡ 2
 
 This level is very simple, as the password is just the build version of powershell running on the server.
 To determine the version, you only need to type:
@@ -33,7 +33,7 @@ SerializationVersion           1.1.0.1
 
 So in this case the password is _10.0.14393.2636_
 
-### Century 2 -> 3
+### Century 2 ➡ 3
 
 This level continues to ease us into Powershell, now the new password is the the name of the built-in cmdlet that "emulates" wget and the name of the file that is on the user's desktop.
 
@@ -44,7 +44,7 @@ PS C:\Users\century2\Documents> Get-Alias wget
 
 CommandType     Name                      Version    Source
 -----------     ----                      -------    ------
-Alias           wget -> Invoke-WebRequest
+Alias           wget ➡ Invoke-WebRequest
 ```
 
 And you can get the filename just as easy with:
@@ -65,7 +65,7 @@ Mode                LastWriteTime         Length Name
 
 So the password is just _invoke-webrequest443_ (lowercase as indicated on the challenge page)
 
-### Century 3 -> 4
+### Century 3 ➡ 4
 
 Still an easy one, the password is just the number of files on the user's desktop. It's the first time we have to use a Powershell command though. (Obviously all we've used until now are Powershell commands but aliased as their bash names). The solution is just:
 
@@ -76,7 +76,7 @@ PS C:\Users\century3\documents> echo ( ls ..\Desktop | Measure-Object).Count
 
 Onwards to century4 with 123 we go.
 
-### Century 4 -> 5
+### Century 4 ➡ 5
 
 Now this one has a trick, the password is still just a filename but the file is inside a folder which has spaces, but you can circumvent it using tab-completion, just write the C and then hit tab and it will expand to the full name, as pictured below:
 
@@ -94,7 +94,7 @@ Mode                LastWriteTime         Length Name
 
 ```
 
-### Century 5 -> 6
+### Century 5 ➡ 6
 
 So this one is a little bit trickier, the password is the short name of the domain where the machine is and the name of the file on the desktop.
 
@@ -121,7 +121,7 @@ Mode                LastWriteTime         Length Name
 
 So, the password would just be _underthewire3347_
 
-### Century 6 -> 7
+### Century 6 ➡ 7
 
 The solution to this one is the same as Century 3, I was afraid we'd have to learn how to filter files and folders, but appears not, since the solution worked right away for me.
 
@@ -130,7 +130,7 @@ PS C:\Users\century6\documents> echo ( ls ..\Desktop | Measure-Object).Count
 197
 ```
 
-### Century 7 -> 8
+### Century 7 ➡ 8
 
 The password for this level is the content of a file hidden inside the user's folders. All we know is that the password is inside a readme so, if we search for a command that works similar to grep we find that **_Get-ChildItem_** (aliased as ls in the example below) is capable of doing just that. All we have to do is cd into the parent folder of the user and search for a file that _includes_ read and do it _recursively_, so that it searches every folder available.
 
@@ -156,7 +156,7 @@ PS C:\Users\century7> cat .\Downloads\Readme
 
 So the password is just _7points_.
 
-### Century 8 -> 9
+### Century 8 ➡ 9
 
 The password for this level is the number of unique lines on the file on the file on the desktop. So, using our bash trained minds, we instantly think of `sort | uniq`, so translating to Powershell, we can use **_Get-Unique_**, in bash we'd have to sort it first, due to how uniq works, but here **_Get-Unique_** works by itself. So we can just count the lines left after removing duplicates.
 
@@ -167,7 +167,7 @@ PS C:\Users\century8\Desktop> (cat .\unique.txt | Get-Unique).count
 
 The password is _696_.
 
-### Century 9 -> 10
+### Century 9 ➡ 10
 
 This level asks for us to retrieve the 161th word of the document on the desktop, which is really simple, we just have to open the file, split it using **_split(" ")_** and then get the desired item, which we can do with brackets, like this:
 
@@ -176,7 +176,7 @@ PS C:\Users\century9\Desktop> (cat .\Word_File.txt).split(" ")[160]
 pierid
 ```
 
-### Century 10 -> 11
+### Century 10 ➡ 11
 
 We need to get the 10th and the 8th word of the description of the windows update service and the name of the file on the desktop, with **_Get-Service_**, you get a list of all the services that machine has, and at the bottom of the list you can see _wuauserv_, the name of the windows update service.
 
@@ -197,7 +197,7 @@ So you need to get the service, needing to use a filter to get it, yeah, that th
 
 Getting the name of the desktop is trivial at this time so, the password is _windowsupdates110_
 
-### Century 11 -> 12
+### Century 11 ➡ 12
 
 For this one we need to get the name of a file hidden "within the contacts, desktop, documents, downloads, favorites, music,or videos folder in the user's profile", so while it would have been possible to just go to the home folder of the user and recursively check on all folders, because they were so few folders i just went and guessed where it would be, and i finally found it on the downloads folder. To find hidden files you can just tack on **_Force_** on **_Get-Childitem_**.
 
@@ -214,7 +214,7 @@ Mode                LastWriteTime         Length Name
 --rh--        8/30/2018   3:34 AM             30 secret_sauce
 ```
 
-### Century 12 -> 13
+### Century 12 ➡ 13
 
 The password for this level is the description of the domain's controller computer, plus the name of the file on the desktop, so, to get the description of the domain's controller, we use **_Get-ADDomainController_**.
 
@@ -255,7 +255,7 @@ UserPrincipalName :
 
 The password is _i_authenticate_things_ (the name of the file on the desktop).
 
-### Century 13 -> 14
+### Century 13 ➡ 14
 
 This one introduces a new cmdlet to use, **_Measure-Object_**. This cmdlet is very useful to know how many words, lines, characters, and seemingly _[almost everything?](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/measure-object?view=powershell-6)_.
 To figure out the number of words in this file, we can just pipe it to the cmdlet and then specify that we want the number of words.
@@ -270,7 +270,7 @@ Lines Words Characters Property
 
 ```
 
-### Century 14 -> 15
+### Century 14 ➡ 15
 
 For the last level of this wargame, we simply have to count the number of times the word polo appears inside a file, which is pretty easy to learn how to do with a simple google [search](https://stackoverflow.com/questions/29889495/count-specific-string-in-text-file-using-powershell), so I just adapted the first answer and got what we wanted easily.
 

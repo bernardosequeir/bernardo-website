@@ -8,15 +8,15 @@ import styles from '../components/layout.module.scss'
 export default ({ data }) => (
   <Layout>
     <div>
-      <h1
-        className={styles.headline}
+      <h2
+        //className={styles.headline}
         css={css`
           display: inline-block;
           margin-top: 40px;
         `}
       >
         Blog Posts
-      </h1>
+      </h2>
       {data.allMarkdownRemark.edges
         .filter(({ node }) => node.fields.slug.includes('complete'))
         .map(({ node }) => (

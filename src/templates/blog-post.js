@@ -8,7 +8,7 @@ export default ({ data }) => {
   return (
     <Layout>
       <div>
-        <h1 className="title" >{post.frontmatter.title}</h1>
+        <h3 className={styles.subheading1} >{post.frontmatter.title}</h3>
         <div
           className={`body1  ${styles.blogPost}`}
           dangerouslySetInnerHTML={{ __html: post.html }}

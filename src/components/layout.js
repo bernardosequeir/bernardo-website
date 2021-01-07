@@ -22,14 +22,14 @@ export default ({ children }) => {
 
       <div className={styles.main}>
         <Link to="/">
-          <h3
-            className={styles.display1}
+          <h2
+            className={styles.subheading2}
             css={css`
             display: inline-block;
           `}
           >
             {data.site.siteMetadata.title}
-          </h3>
+          </h2>
         </Link>
         <Link
           className={styles.button}

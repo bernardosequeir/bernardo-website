@@ -87,7 +87,7 @@ $letter-spacing-button: 0.1;
 }
 /* typography mixins and sizes copied from https://codepen.io/zavoloklom/details/IkaFL */
 html {
-  font-size: 80%;
+  font-size:100%;
   width: 100%;
   height: 100%;
 }
@@ -130,7 +130,7 @@ html.textSmall {
 }
 
 
-.display4 {
+h1 {
   @include font(
     $font-size-display-4,
     $line-height-display-4,
@@ -139,7 +139,7 @@ html.textSmall {
   font-weight: $font-weight-display-4;
   text-transform: inherit;
 }
-.display3 {
+h2 {
   @include font(
     $font-size-display-3,
     $line-height-display-3,
@@ -148,7 +148,7 @@ html.textSmall {
   font-weight: $font-weight-display-3;
   text-transform: inherit;
 }
-.display2 {
+h3 {
   @include font(
     $font-size-display-2,
     $line-height-display-2,
@@ -157,7 +157,7 @@ html.textSmall {
   font-weight: $font-weight-display-2;
   text-transform: inherit;
 }
-.display1 {
+h4 {
   @include font(
     $font-size-display-1,
     $line-height-display-1,
@@ -166,7 +166,7 @@ html.textSmall {
   font-weight: $font-weight-display-1;
   text-transform: inherit;
 }
-.headline {
+h3 {
   @include font(
     $font-size-headline,
     $line-height-headline,
@@ -198,12 +198,12 @@ html.textSmall {
   font-weight: $font-weight-subhead-1;
   text-transform: inherit;
 }
-.body2 {
+p {
   @include font($font-size-body-2, $line-height-body-2, $letter-spacing-body-2);
   font-weight: $font-weight-body-2;
   text-transform: inherit;
 }
-.body1 {
+p{
   @include font($font-size-body-1, $line-height-body-1, $letter-spacing-body-1);
   font-weight: $font-weight-body-1;
   text-transform: inherit;
@@ -235,10 +235,10 @@ html.textSmall {
 
 
 
-.display4,
-.display3,
-.display2,
-.display1 {
+h1,
+h2,
+h3,
+h4 {
   margin: 0 0 $line-height-title/2 + 0px 0;
   margin-bottom: $line-height-title/20 + 0rem;
 }
@@ -257,9 +257,7 @@ html.textSmall {
   margin-bottom: $line-height-body-1/20 + 0rem;
 }
 
-a:visited {
-  color: #ee4540;
-}
+
 
   pre,
   .posts {
@@ -296,10 +294,23 @@ a:visited {
     overflow-wrap: break-word !important;
     overflow: hidden !important;
   }
+  h3 {
+    margin-bottom: 75px;
+  }
+  .blogPost {
+    padding-left: 50px;
+    padding-right: 50px;
+    h3{
+    width: 70%;
+    margin-top : 70px;
+    padding-top: 15px;
+    border-top: solid #fff 1px; 
+    margin-bottom: 0;
+    }
 
-  #blogPost h3{
-    padding-top : 15px;
-    border-top: solid #fff 1px;
+    p {
+      line-height: 120%;
+    }
   }
 }
 
@@ -332,10 +343,13 @@ a:visited {
   .body2 {
     @include font-size($font-size-dv-body);
   }
-  .body1 {
+  p {
     @include font-size($font-size-dv-body);
   }
   .menu {
     @include font-size($font-size-dv-menu);
+  }
+  .blogPost {
+    padding: 0;
   }
 }
