@@ -3,15 +3,16 @@ import React from 'react';
 import { css } from '@emotion/core';
 import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
+import styles from '../components/layout.module.scss'
 
 export default ({ data }) => (
   <Layout>
     <div>
       <h1
-        className="headline"
+        className={styles.headline}
         css={css`
           display: inline-block;
-          border-bottom: 1px solid;
+          margin-top: 40px;
         `}
       >
         Blog Posts
@@ -19,7 +20,7 @@ export default ({ data }) => (
       {data.allMarkdownRemark.edges
         .filter(({ node }) => node.fields.slug.includes('complete'))
         .map(({ node }) => (
-          <div key={node.id} className="posts">
+          <div key={node.id} className={styles.posts}>
             <Link
               to={node.fields.slug}
               css={css`
@@ -28,14 +29,14 @@ export default ({ data }) => (
               `}
             >
               <h3
-                className="subhead-1"
+                className={styles.subhead1}
                 css={css`
                   margin-bottom: 1rem};
                 `}
               >
                 {node.frontmatter.title} <span>— {node.frontmatter.date}</span>
               </h3>
-              <p className="label">{node.excerpt}</p>
+              <p className={styles.label}>{node.excerpt}</p>
             </Link>
           </div>
         ))}
