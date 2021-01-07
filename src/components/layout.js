@@ -21,25 +21,27 @@ export default ({ children }) => {
 
 
       <div className={styles.main}>
-        <Link to="/">
-          <h2
-            className={styles.subheading2}
-            css={css`
+        <nav>
+          <Link to="/">
+            <h2
+              className={styles.subheading2}
+              css={css`
             display: inline-block;
           `}
-          >
-            {data.site.siteMetadata.title}
-          </h2>
-        </Link>
-        <Link
-          className={styles.button}
-          to="/about/"
-          css={css`
+            >
+              {data.site.siteMetadata.title}
+            </h2>
+          </Link>
+          <Link
+            className={styles.button}
+            to="/about/"
+            css={css`
           float: right;
         `}
-        >
-          About
+          >
+            About
       </Link>
+        </nav>
         {children}
       </div >
     </div>

@@ -125,7 +125,11 @@ html.textSmall {
   padding: 25px;
   margin: 0 auto;
   min-height: 90%;
-
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between
+    }
 
 }
 
