@@ -1,48 +1,7 @@
 /*imports*/
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,500i,700i,900&display=swap");
 
-/* typography mixins and sizes copied from https://codepen.io/zavoloklom/details/IkaFL */
-html {
-  font-size: 80%;
-  width: 100%;
-  height: 100%;
-}
-body {
-  height: 100%;
-}
-html.textLarge {
-  font-size: 75%;
-}
-
-html.textSmall {
-  font-size: 50%;
-}
-
-#___gatsby {
-  height: 100%;
-}
-
-.main {
-  padding-top: 5%;
-  display: flex;
-  flex-flow: column;
-  margin-top: 5%;
-  background-color: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14),
-    0 3px 3px -2px rgba(0, 0, 0, 0.12), 0 1px 8px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  padding: 25px;
-  margin: 0 auto;
-  min-height: 90%;
-
-
-}
-
-.wrapper {
-  padding: 2%;  
-  background-color: #121212;
-  min-height: 100vh;
-  $font-size-display-4: 112;
+$font-size-display-4: 112;
 $font-size-display-3: 56;
 $font-size-display-2: 45;
 $font-size-display-1: 34;
@@ -126,6 +85,51 @@ $letter-spacing-button: 0.1;
   letter-spacing: $kerningSize + 0px;
   letter-spacing: ($kerningSize / 10)+0rem;
 }
+/* typography mixins and sizes copied from https://codepen.io/zavoloklom/details/IkaFL */
+html {
+  font-size: 80%;
+  width: 100%;
+  height: 100%;
+}
+body {
+  height: 100%;
+}
+html.textLarge {
+  font-size: 75%;
+}
+
+html.textSmall {
+  font-size: 50%;
+}
+
+#___gatsby {
+  height: 100%;
+}
+
+
+
+.wrapper {
+  padding: 2%;  
+  background-color: #121212;
+  min-height: 100vh;
+
+  .main {
+  padding-top: 5%;
+  display: flex;
+  flex-flow: column;
+  margin-top: 5%;
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14),
+    0 3px 3px -2px rgba(0, 0, 0, 0.12), 0 1px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 25px;
+  margin: 0 auto;
+  min-height: 90%;
+
+
+}
+  width: 100%;
+
 
 .display4 {
   @include font(
@@ -230,32 +234,7 @@ $letter-spacing-button: 0.1;
   text-transform: uppercase;
 }
 
-@media only screen and (min-width: 960px) {
-  .main {
-    width: 60%;
-  }
-}
-// Font-size for device
-@media only screen and (max-width: 960px) {
-  .main {
-    width: 100%;
-  }
-  .subhead2 {
-    @include font-size($font-size-dv-subhead);
-  }
-  .subhead1 {
-    @include font-size($font-size-dv-subhead);
-  }
-  .body2 {
-    @include font-size($font-size-dv-body);
-  }
-  .body1 {
-    @include font-size($font-size-dv-body);
-  }
-  .menu {
-    @include font-size($font-size-dv-menu);
-  }
-}
+
 
 .display4,
 .display3,
@@ -322,5 +301,39 @@ a:visited {
   #blogPost h3{
     padding-top : 15px;
     border-top: solid #fff 1px;
+  }
+}
+
+
+@media only screen and (min-width: 960px) {
+  .main {
+    width: 60%;
+  }
+  
+}
+// Font-size for device
+@media only screen and (max-width: 960px) {
+  .main {
+    max-width: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+  .wrapper {
+    padding: 0; 
+  }
+  .subhead2 {
+    @include font-size($font-size-dv-subhead);
+  }
+  .subhead1 {
+    @include font-size($font-size-dv-subhead);
+  }
+  .body2 {
+    @include font-size($font-size-dv-body);
+  }
+  .body1 {
+    @include font-size($font-size-dv-body);
+  }
+  .menu {
+    @include font-size($font-size-dv-menu);
   }
 }

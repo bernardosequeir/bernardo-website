@@ -76,7 +76,7 @@ module.exports = {
               prompt: {
                 user: 'root',
                 host: 'localhost',
-                global: false,
+                global: true,
               },
               // By default the HTML entities <>&'" are escaped.
               // Add additional HTML escapes by providing a mapping
