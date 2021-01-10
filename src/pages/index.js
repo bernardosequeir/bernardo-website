@@ -19,7 +19,7 @@ export default ({ data }) => (
         Blog Posts
       </h3>
       {data.allMarkdownRemark.edges
-        .filter(({ node }) => node.fields.slug.includes('complete'))
+        .filter(({ node }) => node.fields.slug.includes('blog-post'))
         .map(({ node }) => (
           <div key={node.id} className={styles.posts}>
             <Link
@@ -60,7 +60,6 @@ export const query = graphql`
           fields {
             slug
           }
-          excerpt
         }
       }
     }

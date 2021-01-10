@@ -4,6 +4,13 @@ import marked from "marked";
 
 import ResizablePanels from "resizable-panels-react";
 import Markdown from "./Markdown";
+
+
+
+/*
+TODO: - fix border on the bottom
+      - give padding on the coded by line
+*/
 const defaultMarkdown = `
   # Test h1
   
