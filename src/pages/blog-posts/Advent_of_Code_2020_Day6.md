@@ -1,4 +1,4 @@
----
+--- 
 title: "Advent of Code 2020: Day 1"
 date: "2021-01-08"
 pullQuote: "Solution for the first day challenges of the 2020 edition of Advent of Code!"
@@ -8,7 +8,7 @@ pullQuote: "Solution for the first day challenges of the 2020 edition of Advent 
 
 This year's challenges start with an easy-one, for warm-up. You can read the problem description (and the very charming box text) [here](https://adventofcode.com/2020/day/1)
 
-But essentially, we are given a list of numbers as an input, and for the first part of this problem we need to find a pair of numbers that sum to 2020, and return the product of those two numbers.
+But essentially, we are given a list of numbers as an input, and for the first part of this problem, we need to find a pair of numbers that sum to 2020 and return the product of those two numbers.
 
 ### Part 1
 
@@ -16,7 +16,7 @@ We can solve this problem easily by just iterating through the list with two for
 
 But that implementation could leave us with a solution that would return true if we, as an example had the number 1010 in the list, as by writing two for loops that check every value would eventually sum every index of the list with itself and then the function would return that, which I'd consider an error.
 
-We can solve this very easily by just making the nested loop start one index ahead of the outer loop. This way, we don't double check a sum and we don't need to worry about the number itself summing to the target value.
+We can solve this very easily by just making the nested loop start one index ahead of the outer loop. This way, we don't double-check a sum and we don't need to worry about the number itself summing to the target value.
 
 
 ```javascript
@@ -53,5 +53,6 @@ Which just means that we need to add a third loop, so we compare three values at
 
 
 Source code can be found [here](https://github.com/bernardosequeir/advent-of-code-js) 
+
 
 
