@@ -6,9 +6,23 @@ pullQuote: "Today we determine how many passwords are valid in the Official Tobo
 
 ### Introduction 
 
-This year's challenges start with an easy-one, for warm-up. You can read the problem description (and the very charming box text) [here](https://adventofcode.com/2020/day/1)
+Oh noes! The password database at the "North Pole Toboggan Rental Shop" has become a little corrupted! And it seems that some of the passwords inside wouldn't be valid according to the password policy when they were created. Let's find out how many may have been affected.
+ 
+### Input Format
 
-But essentially, we are given a list of numbers as an input, and for the first part of this problem, we need to find a pair of numbers that sum to 2020 and return the product of those two numbers.
+```
+1-3 a: abcde
+1-3 b: cdefg
+2-9 c: ccccccccc
+``` 
+
+* `1-3` - boundaries for the number of times the character must appear on the password for it to be valid.
+
+* `a` - the character that must appear x times on the password.
+
+* `abcde` - the password itself.
+
+In this example case, the password is valid because *a* appears 1 time in it.
 
 ### Part 1
 
@@ -20,15 +34,20 @@ We can solve this very easily by just making the nested loop start one index ahe
 
 
 ```javascript
-  const pairFinder = (input, targetValue) => {
-    for (let i = 0; i < input.length; i++) {
-      for (let j = i + 1; j < input.length; j++) {
-        if (input[i] + input[j] === targetValue) {
-          return input[i] * input[j]
-        }
-      }
-    }
-  }
+const validPasswordCounterPart1 = (passwordList) => {
+  let validPasswords = 0
+  passwordList.forEach(password => {
+    const parts = password.split(' ')
+    const lowerLimit = parts[0].split('-')[0]
+    const upperLimit = parts[0].split('-')[1]
+    const character = parts[1].split(':')[0]
+    const pass = parts[2]
+    const letterCount = pass.split(character).length - 1
+    if (letterCount >= lowerLimit && letterCount <= upperLimit) { validPasswords++ }
+    console.log(pass, letterCount, character);
+  })
+  return validPasswords
+}
 ```
 
 ### Part 2
@@ -38,16 +57,22 @@ In the following challenges, the second part is always harder than the first one
 Which just means that we need to add a third loop, so we compare three values at a time, applying the same ideas as we used in the first part:
 
 ```javascript
-    const trioFinder = (input, targetValue) => {
-      for (let i = 0; i < input.length; i++) {
-        for (let j = i + 1; j < input.length; j++) {
-          for (let k = j + 1; k < input.length; k++) {
-            if (input[i] + input[j] + input[k] === targetValue) {
-              return input[i] * input[j] * input[k]
-            }
-          }
+    const validPasswordCounterPart2 = (passwordList) => {
+      let validPasswords = 0
+      passwordList.forEach(password => {
+        const parts = password.split(' ')
+        const lowerPosition = parts[0].split('-')[0] - 1
+        const upperPosition = parts[0].split('-')[1] - 1
+        const character = parts[1].split(':')[0]
+        const pass = parts[2]
+        const firstMatch = pass[lowerPosition] === character
+        const lastMatch = pass[upperPosition] === character
+        if (firstMatch ^ lastMatch) {
+          console.log(pass, lowerPosition, upperPosition, character)
+          validPasswords++
         }
-      }
+      })
+      return validPasswords
     }
 ```
 

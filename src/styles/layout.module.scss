@@ -223,7 +223,7 @@ p {
   font-weight: $font-weight-body-2;
   text-transform: inherit;
 }
-p{
+p, li{
   @include font($font-size-body-1, $line-height-body-1, $letter-spacing-body-1);
   font-weight: $font-weight-body-1;
   text-transform: inherit;
@@ -278,7 +278,9 @@ h4 {
 }
 
 
-
+  pre {
+    width: 70%;
+  }
   pre,
   .posts {
     background-color: rgba(255, 255, 255, 0.12);
@@ -302,7 +304,7 @@ h4 {
   h3,
   h4,
   p,
-  a {
+  a,li {
     font-family: "Roboto", sans-serif;
     color: #ffffff;
   }
@@ -313,6 +315,7 @@ h4 {
     word-break: normal !important;
     overflow-wrap: break-word !important;
     overflow: hidden !important;
+    
   }
   h3 {
     margin-bottom: 75px;
