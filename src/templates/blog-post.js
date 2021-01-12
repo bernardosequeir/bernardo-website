@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
-import styles from '../components/layout.module.scss'
+import styles from '../styles/layout.module.scss'
 
 export default ({ data }) => {
   const post = data.markdownRemark;

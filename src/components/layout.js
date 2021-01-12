@@ -1,8 +1,8 @@
 /* eslint-disable react/display-name */
 import React from 'react';
-import { css } from '@emotion/core';
 import { useStaticQuery, Link, graphql } from 'gatsby';
-import styles from './layout.module.scss';
+import styles from '../styles/layout.module.scss';
+import NavBar from './NavBar';
 
 export default ({ children }) => {
   const data = useStaticQuery(
@@ -17,31 +17,11 @@ export default ({ children }) => {
     `
   );
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.layoutWrapper}>
 
 
       <div className={styles.main}>
-        <nav>
-          <Link to="/">
-            <h2
-              className={styles.subheading2}
-              css={css`
-            display: inline-block;
-          `}
-            >
-              {data.site.siteMetadata.title}
-            </h2>
-          </Link>
-          <Link
-            className={styles.button}
-            to="/about/"
-            css={css`
-          float: right;
-        `}
-          >
-            About
-      </Link>
-        </nav>
+        <NavBar title={data.site.siteMetadata.title}/>
         {children}
       </div >
     </div>

@@ -2,9 +2,8 @@
 import React from 'react';
 import { css } from '@emotion/core';
 import { Link, graphql } from 'gatsby';
-import Layout from '../components/layout';
-import styles from '../styles/layout.module.scss'
-import NavBar from '../components/NavBar';
+import Layout from '../../components/layout';
+import styles from '../../styles/layout.module.scss'
 
 export default ({ data }) => (
   <Layout>
@@ -20,7 +19,7 @@ export default ({ data }) => (
         Blog Posts
       </h3>
       {data.allMarkdownRemark.edges
-        .filter(({ node }) => node.fields.slug.includes('blog-post'))
+        .filter(({ node }) => node.fields.slug.includes('portfolio'))
         .map(({ node }) => (
           <div key={node.id} className={styles.posts}>
             <Link

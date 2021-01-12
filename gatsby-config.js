@@ -7,7 +7,7 @@ module.exports = {
     `gatsby-plugin-emotion`,
     `gatsby-transformer-remark`,
     // `gatsby-plugin-material-ui`
-
+    `gatsby-plugin-fontawesome-css`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

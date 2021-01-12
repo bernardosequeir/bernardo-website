@@ -2,9 +2,9 @@
 import React from 'react';
 import { css } from '@emotion/core';
 import { Link, graphql } from 'gatsby';
-import Layout from '../components/layout';
-import styles from '../styles/layout.module.scss'
-import NavBar from '../components/NavBar';
+import Layout from '../../components/layout';
+import styles from '../../styles/layout.module.scss'
+import NavBar from '../../components/NavBar';
 
 export default ({ data }) => (
   <Layout>
