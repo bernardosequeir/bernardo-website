@@ -7,8 +7,9 @@ pullQuote: "Today we determine how many passwords are valid in the Official Tobo
 ### Introduction 
 
 Oh noes! The password database at the "North Pole Toboggan Rental Shop" has become a little corrupted! And it seems that some of the passwords inside wouldn't be valid according to the password policy when they were created. Let's find out how many may have been affected.
- 
-### Input Format
+
+(As always, the link for the challenge is [here](https://adventofcode.com/2020/day/2))
+### Input Format For Part 1
 
 ```
 1-3 a: abcde
@@ -26,11 +27,7 @@ In this example case, the password is valid because *a* appears 1 time in it.
 
 ### Part 1
 
-We can solve this problem easily by just iterating through the list with two for loops, and checking the value of the sum in every iteration.
-
-But that implementation could leave us with a solution that would return true if we, as an example had the number 1010 in the list, as by writing two for loops that check every value would eventually sum every index of the list with itself and then the function would return that, which I'd consider an error.
-
-We can solve this very easily by just making the nested loop start one index ahead of the outer loop. This way, we don't double-check a sum and we don't need to worry about the number itself summing to the target value.
+This challenge is still pretty simple, we just need to iterate over the password list, and count the amount of times the defined characters appear on the password. This can be accomplished in many ways but I just split the password by the defined character ( using `.split()` ) and used the length of the array. And then check if the number was inside the boundaries defined. 
 
 
 ```javascript
@@ -50,11 +47,24 @@ const validPasswordCounterPart1 = (passwordList) => {
 }
 ```
 
+(If you're confused by the -1 on the letterCount, it's just because when you use `.split()` and it actually matches, you always get the field after the character you split by. So even if you only had one match, the array will always have two fields).
+
+### Input Format For Part 2
+
+```
+1-3 a: abcde
+1-3 b: cdefg
+2-9 c: ccccccccc
+``` 
+
+Everything but the `1-3` stays the same. Now the values describe two positions in the password instead.
+
 ### Part 2
 
-In the following challenges, the second part is always harder than the first one but in this case, the only difference is instead of finding a pair of numbers that sums to 2020, we just need to find a trio that sum to it.
+The way to validate a password has changed, instead of counting occurrences, we need to check for the presence of the character in the selected positions. The passwords are only considered valid if only ONE of the positions contains the selected character, and is invalid if either both positions contain the character or if neither of them contain it. A simpler way to explain this condition is to equate it to an [XOR gate](https://en.wikipedia.org/wiki/XOR_gate).
 
-Which just means that we need to add a third loop, so we compare three values at a time, applying the same ideas as we used in the first part:
+But essentially, our method for solving this remains similar, simply iterate over all lines and if the conditions for a password to be valid are met we just add one to the counter.
+
 
 ```javascript
     const validPasswordCounterPart2 = (passwordList) => {
