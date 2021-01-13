@@ -5,6 +5,8 @@ import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
 import styles from '../styles/layout.module.scss'
 
+
+
 export default ({ data }) => (
   <Layout>
     <div>

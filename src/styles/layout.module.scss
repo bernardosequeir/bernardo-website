@@ -109,13 +109,55 @@ html.textSmall {
 }
 
 
+.layoutWrapper.dark {
+  background-color: #121212;
 
+}
+
+.layoutWrapper.light {
+  background-color: #90caf9;
+  color: #121212;
+  a {
+    color: #121212;
+  }
+
+}
 
 .layoutWrapper {
   padding: 2%;  
-  background-color: #121212;
   min-height: 100vh;
   max-width: 100%;
+
+  .navBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0 auto;
+    .name {
+      flex-grow:2;
+      font-size: 4rem;
+      h2 {
+        font-family: 'Roboto Mono', monospace ;  
+      }
+    }
+    
+    .buttons {
+      flex-grow: 2;
+      display: flex;
+      justify-content: space-evenly;
+
+      .darkMode{
+        background-color: inherit; 
+        border-color: #121212;
+        border-width:0 ;
+        color: #fff;
+      }
+    }
+
+  }
+      
+
   .main {
   padding-top: 5%;
   display: flex;
@@ -128,26 +170,8 @@ html.textSmall {
   padding: 25px;
   margin: 0 auto;
   min-height: 90%;
-  .navBar {
-    display: flex;
-    flex-direction: row;
-    
-    align-items: center;
-    justify-content: space-evenly;
-    flex: 3 1 1 1;
-    h2 {
-      font-size: 4rem;
-      font-family: 'Roboto Mono', monospace !important;  }
-    }
-          
-
-      .size {
-        display: flex;
-        justify-content: space-between;
-      }
-    
-
-}
+      
+  }
 
 
 h1 {
@@ -287,9 +311,9 @@ h4 {
     margin: 3%;
     box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
       0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
-    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-  }
-  pre:hover,
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 2);
+    }
+    pre:hover,
   .posts:hover {
     background-color: rgba(255, 255, 255, 0.16);
     box-shadow: 0 12px 17px 2px rgba(0, 0, 0, 0.14),
@@ -338,10 +362,12 @@ h4 {
 
 
 @media only screen and (min-width: 960px) {
-  .main {
+  .main{
     width: 60%;
   }
-
+  .navBar {
+    width: 80%;
+  }
   .blogPost {
     padding-left: 50px;
     padding-right: 50px;
