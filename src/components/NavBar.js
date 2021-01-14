@@ -27,8 +27,8 @@ const NavBar = ({ title, toggle }) => {
       <div className={styles.buttons}>
         <Link to="/blog-posts/"><p className={styles.button}>Blog Posts</p></Link>
         <Link to="/portfolio/"><p className={styles.button}>Portfolio</p></Link>
-        <button className={`${styles.button} ${styles.darkMode}`} onClick={toggle}> <FontAwesomeIcon icon={faSun} /> </button>
-      </div>
+        {/*         <button className={`${styles.button} ${styles.darkMode}`} onClick={toggle}> <FontAwesomeIcon icon={faSun} /> </button>
+ */}      </div>
       {/*   <div className={styles.size}>
         <p className={styles.button}> <FontAwesomeIcon icon={faSearchPlus} /> </p>
         <p className={styles.button} css={css`padding-left: 10px`}> <FontAwesomeIcon icon={faSearchMinus} /> </p>

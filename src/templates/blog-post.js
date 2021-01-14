@@ -4,7 +4,6 @@ import Layout from '../components/layout';
 import styles from '../styles/layout.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLevelUpAlt } from '@fortawesome/free-solid-svg-icons'
-import { css } from '@emotion/core';
 
 const BlogPost = ({ data }) => {
   const post = data.markdownRemark;
@@ -23,7 +22,7 @@ const BlogPost = ({ data }) => {
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
         <div className={styles.topButtonWrapper}>
-          <button onClick={backToTop} id={styles.topButton} title="Go to top"> <FontAwesomeIcon icon={faLevelUpAlt} css={css`transform: scaleX(-1);`} /> Back to top <FontAwesomeIcon icon={faLevelUpAlt} css={css`transform: scaleX(1);`} /> </button>
+          <button onClick={backToTop} id={styles.topButton} title="Go to top"> To top <FontAwesomeIcon icon={faLevelUpAlt} /> </button>
         </div>
       </div>
     </Layout>

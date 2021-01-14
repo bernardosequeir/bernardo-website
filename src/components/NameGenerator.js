@@ -25,17 +25,6 @@ const NameGenerator = () => {
       </header>
       <p id="text">Your new name is: {names[index]}</p>
       <div id="buttons">
-        {/* <div>
-          <a
-            id="tweet-quote"
-            rel="noopener noreferrer"
-            target="_blank"
-            href={`http://twitter.com/intent/tweet?text=${quotes[this.state.quoteIndex]
-              }`}
-          >
-            Tweet This
-            </a>
-        </div> */}
         <button type="button" id="new-quote" onClick={newQuote}>
           New Name
           </button>
