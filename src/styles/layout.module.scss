@@ -170,7 +170,20 @@ html.textSmall {
   padding: 25px;
   margin: 0 auto;
   min-height: 90%;
-      
+    
+    .topButtonWrapper {
+      display: grid;
+      place-items: center;
+      #topButton{
+        padding:5px 10px;
+        background-color: inherit; 
+        border-color: #fff;
+        border-width:1px ;
+        border-radius: 10px;
+        color: #fff;
+        border-style: solid;
+      }
+    }
   }
 
 

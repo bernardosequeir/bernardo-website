@@ -1,3 +1,4 @@
 ---
+projectTitle : "Markdown Previewer"
 
 ---
