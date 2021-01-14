@@ -186,6 +186,16 @@ html.textSmall {
     }
   }
 
+  #portfolioAppButton{
+    padding:5px 10px;
+    background-color: inherit; 
+    border-color: #fff;
+    border-width:1px ;
+    border-radius: 10px;
+    color: #fff;
+    border-style: solid;
+  }
+
 
 h1 {
   @include font(
