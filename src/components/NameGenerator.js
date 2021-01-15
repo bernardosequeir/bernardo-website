@@ -25,7 +25,10 @@ const NameGenerator = () => {
     
     `} id={styles.quoteBox}>
       <header id={styles.author}>
-        <h1>DnD Name Generator</h1>
+        <h1 css={css
+          `font-family: "Roboto Mono", monospace;
+        `
+        }>DnD Name Generator</h1>
       </header>
       <p id={styles.text}>Your new name is: {names[index]}</p>
       <div id={styles.buttons}>
