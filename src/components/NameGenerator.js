@@ -30,7 +30,7 @@ const NameGenerator = () => {
         `
         }>DnD Name Generator</h1>
       </header>
-      <p id={styles.text}>Your new name is: {names[index]}</p>
+      <p id={styles.text}>Your new name is: <b>{names[index]}</b></p>
       <div id={styles.buttons}>
         <button type="button" id={styles.newQuote} onClick={newQuote}>
           New Name
