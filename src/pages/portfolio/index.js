@@ -27,7 +27,7 @@ export default ({ data }) => (
           .map(({ node }) => (
             <div key={node.id} className={styles.posts}>
               <Link
-                to={node.fields.slug}
+                to={node.frontmatter.projectLink}
                 css={css`
                 text-decoration: none;
                 color: inherit;
@@ -60,6 +60,7 @@ export const query = graphql`
           frontmatter {
             projectTitle
             projectIntro
+            projectLink
           }
           fields {
             slug

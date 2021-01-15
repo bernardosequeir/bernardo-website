@@ -1,5 +1,5 @@
 ---
-projectTitle : "Markdown Previewer"
-projectIntro: "Online Markdown Previewer with two side-by-side panes"
+projectTitle : "Markdown Editor"
+projectIntro: "Online Markdown Editor with two resizable panes, with instant parsing."
 projectLink: "/portfolio/markdownPreviewer"
 ---

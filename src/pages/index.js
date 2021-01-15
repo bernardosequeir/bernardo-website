@@ -18,9 +18,10 @@ export default ({ data }) => (
         //className={styles.headline}
         css={css`
           font-size: 4.6rem !important;
+          line-height: inherit !important;
           display: inline-block;
           margin-top: 40px;
-          margin-bottom: 0 !important;
+          margin-bottom: 30px !important;
           width:70%;
           text-align: center;
         `}
@@ -28,15 +29,17 @@ export default ({ data }) => (
         Hi, I'm Bernardo. And I like to create websites.</h2>
       <h3 css={css`text-align: center; margin-bottom: 1rem!important; width: 70%`} >This website houses blog posts about programming, web development, and all the other things I'll eventually decide to write about.</h3>
       <h3>Currently looking for work!</h3>
-      <button css={css`    
+      <Link href="mailto:bernardosequeir@gmail.com" target="_blank">
+        <button css={css`    
         box-shadow: -3px 5px white;
         background-color: rgba(255, 255, 255, 0.08); 
         padding: .6rem 1rem;
         border: 1px solid white;
         color: white;
         font-size: 1.5rem;`}>
-        Toss me an email <FontAwesomeIcon icon={faEnvelopeOpenText} />
-      </button>
+          Toss me an email <FontAwesomeIcon icon={faEnvelopeOpenText} />
+        </button>
+      </Link>
     </div>
   </Layout>
 );
