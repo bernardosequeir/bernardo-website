@@ -25,8 +25,8 @@ const NavBar = ({ title, toggle }) => {
         </Link>
       </div>
       <div className={styles.buttons}>
-        <Link to="/blog-posts/"><p className={styles.button}>Blog Posts</p></Link>
         <Link to="/portfolio/"><p className={styles.button}>Portfolio</p></Link>
+        <Link to="/blog-posts/"><p className={styles.button}>Blog Posts</p></Link>
         {/*         <button className={`${styles.button} ${styles.darkMode}`} onClick={toggle}> <FontAwesomeIcon icon={faSun} /> </button>
  */}      </div>
       {/*   <div className={styles.size}>
