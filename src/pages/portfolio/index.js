@@ -16,7 +16,7 @@ export default ({ data }) => (
           margin-bottom: 0 !important;
         `}
       >
-        Blog Posts
+        Portfolio Projects
       </h3>
       <div css={css`
         display: grid;

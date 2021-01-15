@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import styles from '../styles/layout.module.scss';
 import NavBar from './NavBar';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, style }) => {
   const [themePreference, setThemePreference] = useState('Dark')
 
   useEffect(() => {
@@ -44,7 +44,7 @@ const Layout = ({ children }) => {
 
 
       <NavBar title={data.site.siteMetadata.title} toggle={toggleTheme} />
-      <div className={styles.main}>
+      <div className={styles.main} css={style}>
         {children}
       </div >
     </div>

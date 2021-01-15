@@ -32,7 +32,7 @@ export default ({ data }) => (
               <h3
                 className={styles.subhead1}
                 css={css`
-                  margin-bottom: 1rem};
+                  margin-bottom: 1rem;
                 `}
               >
                 {node.frontmatter.title} <span>— {node.frontmatter.date}</span>
