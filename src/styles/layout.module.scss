@@ -129,6 +129,7 @@ html.textSmall {
   max-width: 100%;
 
   .navBar {
+    max-width: 100vw;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -401,6 +402,15 @@ h4 {
 }
 // Font-size for device
 @media only screen and (max-width: 960px) {
+  .navBar {
+    width: 100vw;
+    display: grid!important;
+    grid-template-columns: 1fr;
+    .name {
+      display: grid;
+      place-items:center;
+    }
+  }
   .main {
     max-width: 100%;
     margin: 0;

@@ -21,6 +21,10 @@ export default ({ data }) => (
       <div css={css`
         display: grid;
         grid-template-columns: 1fr 1fr;
+
+        @media only screen and (max-width: 960px) {
+          grid-template-columns: 1fr;
+        }
       `}>
         {data.allMarkdownRemark.edges
           .filter(({ node }) => node.fields.slug.includes('portfolio'))

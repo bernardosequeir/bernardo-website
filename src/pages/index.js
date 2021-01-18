@@ -22,12 +22,12 @@ export default ({ data }) => (
           display: inline-block;
           margin-top: 40px;
           margin-bottom: 30px !important;
-          width:70%;
           text-align: center;
+          
         `}
       >
         Hi, I'm Bernardo. And I like to create websites.</h2>
-      <h3 css={css`text-align: center; margin-bottom: 1rem!important; width: 70%`} >This website houses blog posts about programming, web development, and all the other things I'll eventually decide to write about.</h3>
+      <h3 css={css`margin-bottom: 1rem!important; `} >This website houses blog posts about programming, web development, and all the other things I'll eventually decide to write about.</h3>
       <h3>Currently looking for work!</h3>
       <Link href="mailto:bernardosequeir@gmail.com" target="_blank">
         <button css={css`    
