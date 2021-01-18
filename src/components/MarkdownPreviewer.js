@@ -38,6 +38,7 @@ const MarkdownPreviewer = () => {
 
 
   const handleChange = (event) => {
+    setInput(event.target.value)
     let md = marked(event.target.value);
     setMarkdown(md)
   }
@@ -45,9 +46,10 @@ const MarkdownPreviewer = () => {
   const handleTab = (event) => {
     if (event.key === "Tab") {
       event.preventDefault();
-      event.target.value.concat('\t')
+      setInput(input.concat('\t'))
       setMarkdown(markdown.concat('\t'))
     }
+
   }
 
   return (
@@ -67,9 +69,9 @@ const MarkdownPreviewer = () => {
         >
           <div id={styles.markdown}>
             <textarea
-              defaultValue={input}
+              value={input}
               onChange={handleChange}
-            //onKeyDown={handleTab}
+              onKeyDown={handleTab}
             ></textarea>
           </div>
           <Markdown markdown={markdown} />
