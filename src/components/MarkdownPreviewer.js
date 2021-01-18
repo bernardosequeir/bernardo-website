@@ -69,7 +69,7 @@ const MarkdownPreviewer = () => {
             <textarea
               defaultValue={input}
               onChange={handleChange}
-              onKeyDown={handleTab}
+            //onKeyDown={handleTab}
             ></textarea>
           </div>
           <Markdown markdown={markdown} />
